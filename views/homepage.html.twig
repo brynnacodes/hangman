@@ -1,32 +1,54 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <meta charset="utf-8">
-      <title></title>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
     </head>
-  <body>
-      <div id="guess-1">
-          <img src="" alt="" />
-      </div>
+    <body>
+        <h1>Welcome {{ player.get('name') }} !</h1>
+        <img id="initial-man" src="img/hangman0.jpg" alt="an empty gallows"/>
 
-      <div id="guess-2">
-          <img src="" alt="" />
-      </div>
-
-      <div id="guess-3">
-          <img src="" alt="" />
-      </div>
-
-      <div id="guess-4">
-          <img src="" alt="" />
-      </div>
-
-      <div id="guess-5">
-          <img src="" alt="" />
-      </div>
-
-      <div id="guess-6">
-          <img src="" alt="" />
-      </div>
+        <div>
+            <form id="guess-form" action="/guess" method="post">
+                <h4>Choose a letter:</h4>
+                <select name="alphabet">
+                    <option value="a">a</option>
+                    <option value="b">b</option>
+                    <option value="c">c</option>
+                    <option value="d">d</option>
+                    <option value="e">e</option>
+                    <option value="f">f</option>
+                    <option value="g">g</option>
+                    <option value="h">h</option>
+                    <option value="i">i</option>
+                    <option value="j">j</option>
+                    <option value="k">k</option>
+                    <option value="l">l</option>
+                    <option value="m">m</option>
+                    <option value="n">n</option>
+                    <option value="o">o</option>
+                    <option value="p">p</option>
+                    <option value="q">q</option>
+                    <option value="r">r</option>
+                    <option value="s">s</option>
+                    <option value="t">t</option>
+                    <option value="u">u</option>
+                    <option value="v">v</option>
+                    <option value="w">w</option>
+                    <option value="x">x</option>
+                    <option value="y">y</option>
+                    <option value="z">z</option>
+                </select>
+                <button id="guess" type="submit">Guess!</button>
+            </form>
+            <div id="random-word">
+                <h4>Random word: {{ word }} </h4>
+            </div>
+            <div id="letter-guess">
+                <h4>Your guessed letters: {{ letter }}</h4>
+            </div>
+        </div>
   </body>
 </html>
