@@ -3,6 +3,7 @@
 class Player
 {
     private $name;
+    private $letters;
 
     function __construct($name)
     {
@@ -38,13 +39,13 @@ class Word
     }
 }
 
-class Letter
+class Guess
 {
-    private $guess;
+    private $letter;
 
-    function __construct($guess)
+    function __construct($letter)
     {
-        $this->guess = [];
+        $this->letter = [];
     }
 
     function get($property) {

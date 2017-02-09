@@ -22,7 +22,7 @@ _Make sure to have composer installed before running this app._
 * _Spec 1: Create Player object in php_
 * _Spec 2: Users can enter and save their name_
 * _Spec 3: The program will randomly generate a word from a list of words_
-* _Spec 4: Users can choose a letter from the alphabet_
+* _Spec 4: Users can choose a letter from the alphabet, and the program will save the letter in an array_
 * _Spec 5: The program will display the guessed letters_
 * _Spec 6: The program will check the random word to see if it contains the user's letter_
 * _Spec 7: If the word contains the letter chosen, the program will display the letters in their respective spots in the word_

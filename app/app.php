@@ -24,5 +24,10 @@ date_default_timezone_set("America/Los_Angeles");
       return $app["twig"]->render("homepage.html.twig", ["player" => $player, "word" => $word]);
     });
 
+    $app->post("/guess", function() use ($app) {
+        $guess =new Guess($_POST["letter"]);
+        return $app["twig"]->render("guess.html.twig", ["guess" => $guess]);
+    });
+
     return $app;
  ?>
