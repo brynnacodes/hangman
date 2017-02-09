@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
+    </head>
+    <body>
+        <h1>Welcome!</h1>
+        <div>
+            <form id="guess-form" action="/hangman" method="post">
+                <h4>Choose a letter:</h4>
+                <input id="letter" type="text" name="letter">
+                <button id="guess" type="submit">Guess!</button>
+            </form>
+        </div>
+        <div id="random-word">
+            <h4>Random word: {{ hangman }} </h4>
+        </div>
+  </body>
+</html>

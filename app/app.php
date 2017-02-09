@@ -4,8 +4,8 @@ date_default_timezone_set("America/Los_Angeles");
   require_once __DIR__."/../src/hangman.php";
 
     session_start();
-    if (empty($_SESSION["name-list"])) {
-        $_SESSION["name-list"] = [];
+    if (empty($_SESSION["hangman-list"])) {
+        $_SESSION["hangman-list"] = [];
     }
 
     $app = new Silex\Application();
@@ -16,17 +16,15 @@ date_default_timezone_set("America/Los_Angeles");
         return $app["twig"]->render("newplayer.html.twig");
     });
 
-    $app->post("/home", function() use ($app) {
-      $player = new Player($_POST["name"]);
-      $player->save();
-      $word = new Word();
-      $word = $word->random();
-      return $app["twig"]->render("homepage.html.twig", ["player" => $player, "word" => $word]);
+    $app->post("/guess", function() use ($app) {
+        $hangman = new Hangman();
+        $hangman->save();
+        $hangman = $hangman->random();
+        return $app["twig"]->render("guess.html.twig", ["hangman" => $hangman]);
     });
 
-    $app->post("/guess", function() use ($app) {
-        $guess =new Guess($_POST["letter"]);
-        return $app["twig"]->render("guess.html.twig", ["guess" => $guess]);
+    $app->post("/hangman", function() use ($app) {
+        return $app["twig"]->render("hangman.html.twig");
     });
 
     return $app;
